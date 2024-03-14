@@ -12,11 +12,11 @@ function App() {
   const handleAnimation = () => {
     console.log(textRef.current);
     textRef.current.classList.add("animate__animated");
-    textRef.current.classList.add("animate__swing");
+    textRef.current.classList.add("lg:animate__swing");
 
     setTimeout(() => {
       textRef.current.classList.remove("animate__animated");
-      textRef.current.classList.remove("animate__swing");
+      textRef.current.classList.remove("lg:animate__swing");
     }, 1000);
   };
 
@@ -33,6 +33,7 @@ function App() {
       <h1 ref={textRef}>Vite + React</h1>
       <div className="card">
         <button
+          className="animate__animated hover:animate__wobble"
           onClick={() => {
             setCount((count) => count + 1);
             handleAnimation();
